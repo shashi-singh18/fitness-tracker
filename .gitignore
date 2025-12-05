@@ -1,0 +1,17 @@
+# Maven/Gradle
+target/
+build/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+
+# Angular (will use later)
+dist/
+node_modules/
