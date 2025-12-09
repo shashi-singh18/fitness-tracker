@@ -136,7 +136,7 @@ public class ActivityController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ApiResponse<Void>> delete(
+    public ResponseEntity<Void> delete(
             @PathVariable Long id,
             HttpServletRequest request
     ) {
@@ -145,14 +145,7 @@ public class ActivityController {
 
         activityService.delete(existing.getId());
 
-        ApiResponse<Void> response = ApiResponse.success(
-                "Activity deleted successfully",
-                null,
-                HttpStatus.NO_CONTENT.value(),
-                request.getRequestURI()
-        );
-
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(response);
+        return ResponseEntity.noContent().build();
     }
 
     private ActivityDto toDto(Activity activity) {
